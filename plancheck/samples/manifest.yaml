@@ -1,0 +1,53 @@
+# Sample project manifest (synthetic data). Paths are relative to the ZIP / folder root.
+# Every value here is recorded as-is; plancheck never fills in or substitutes a missing value.
+project:
+  name: Synthetic Meadows
+  community: Example Ridge
+  lot: "12"
+  model: Ashford
+  elevation: B
+  handedness: Left        # Left | Right
+  revision: "3"           # revision of the set under review
+
+files:
+  - path: review/Ashford_Lot12_Rev3.pdf
+    role: set_to_review
+    revision: "3"
+    date: 2026-10-01
+    # sha256: <optional - if given, intake fails on any other version>
+  - path: baseline/Ashford_Approved_Rev2.pdf
+    role: approved_baseline
+    revision: "2"
+    date: 2026-03-15
+  - path: master/Ashford_Master_Rev4.pdf
+    role: master_set
+    revision: "4"
+    date: 2026-11-02
+  - path: redlines/Ashford_Rev2_Redlines.pdf
+    role: prior_redlines
+    revision: "2"
+  - path: docs/Example_Ridge_Checklist.pdf
+    role: community_checklist
+  - path: docs/Lot12_Buyer_Selections.pdf
+    role: buyer_selections
+  - path: docs/Lot12_Plot_Diagram.pdf
+    role: lot_diagram
+
+buyer_options:
+  - name: Morning Room
+    keywords: [MORNING ROOM]
+    expect_on: [A1.1, A2.1]
+  - name: Covered Patio
+    keywords: [COVERED PATIO]
+    expect_on: [A1.1]
+
+# Optional extra prior-redline items not captured as PDF annotations.
+prior_redlines: []
+
+rules:
+  project:
+    - Lot 12 is Left-handed; garage on the left as viewed from the street.
+  community: []           # lines from the community_checklist PDF are added automatically
+
+settings:
+  title_block_region: [0.70, 0.66, 1.0, 1.0]   # left, top, right, bottom as fractions of the visible sheet

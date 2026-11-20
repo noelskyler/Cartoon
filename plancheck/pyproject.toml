@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plancheck"
+version = "0.1.0"
+description = "Local intake, sheet indexing and review-packet toolkit for architectural drawing sets (PDF)."
+requires-python = ">=3.10"
+dependencies = ["pypdfium2>=4.30", "pypdf>=4.0", "Pillow>=10.0", "PyYAML>=6.0"]
+
+[project.scripts]
+plancheck = "plancheck.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
