@@ -12,6 +12,10 @@ It takes a folder or ZIP of PDFs plus a project manifest, then:
 
 Results are cached by file hash and settings. Unchanged files are not processed again.
 
+## Windows: easiest start
+
+Double-click `plancheck.cmd`. A menu offers: 1 = try the sample, 2 = check your own project (it asks for the folder/ZIP and manifest; you can drag them onto the window), 3 = status. The packet folder opens automatically when it's done.
+
 ## Windows: one command
 
 Requires Python 3.10+ ([python.org](https://www.python.org/downloads/), tick "Add to PATH"). From this folder:
